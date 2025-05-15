@@ -3,83 +3,148 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Anric Group – Home</title>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;700;900&display=swap" rel="stylesheet">
+  <title>Sterile Edge | Commercial Cleaning</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
   <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
     body {
-      font-family: 'Barlow', sans-serif;
+      font-family: 'Inter', sans-serif;
+      background-color: #ffffff;
+      color: #2C2C2C;
+      line-height: 1.6;
+    }
+    header {
+      background: linear-gradient(to right, #00C48C, #00AEEF);
+      color: white;
+      text-align: center;
+      padding: 100px 20px 60px;
+    }
+    header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 3rem;
+      margin-bottom: 10px;
+    }
+    header p {
+      font-size: 1.2rem;
+      margin-bottom: 20px;
+    }
+    .cta-btn {
+      background-color: white;
+      color: #00AEEF;
+      border: none;
+      padding: 15px 30px;
+      font-size: 1rem;
+      font-weight: 600;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+    .cta-btn:hover {
+      transform: scale(1.05);
+    }
+    section {
+      padding: 60px 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .services {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+    }
+    .service {
+      background-color: #f9f9f9;
+      padding: 30px;
+      border-radius: 10px;
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+    .service:hover {
+      transform: translateY(-5px);
+    }
+    .testimonial, .cta-form {
+      text-align: center;
+      margin-top: 40px;
+    }
+    .cta-form input, .cta-form textarea {
+      width: 80%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 1rem;
+    }
+    .cta-form button {
+      background-color: #00AEEF;
+      color: white;
+      border: none;
+      padding: 12px 25px;
+      font-size: 1rem;
+      font-weight: bold;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    footer {
+      background-color: #2C2C2C;
+      color: white;
+      text-align: center;
+      padding: 30px 20px;
+      font-size: 0.9rem;
     }
   </style>
 </head>
-<body class="text-gray-900">
-  <!-- Header -->
-  <header class="absolute top-0 left-0 w-full z-50 bg-transparent">
-    <div class="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
-      <img src="logo.png" alt="Anric Group Logo" class="h-10" />
-      <nav class="space-x-6 font-semibold text-white">
-        <a href="#" class="hover:text-orange-500">Home</a>
-        <a href="#" class="hover:text-orange-500">About</a>
-        <a href="#" class="hover:text-orange-500">Plant & Equipment Hire</a>
-        <a href="#" class="hover:text-orange-500">Services</a>
-        <a href="#" class="hover:text-orange-500">The Anric Experience</a>
-        <a href="#" class="hover:text-orange-500">Contact</a>
-      </nav>
-    </div>
+<body>
+  <header>
+    <h1>Flawless Clean, Zero Disruption</h1>
+    <p>Tailored commercial cleaning for offices, medical, and industrial environments.</p>
+    <button class="cta-btn">Request a Quote</button>
   </header>
 
-  <!-- Hero Section -->
-  <section class="relative h-screen bg-cover bg-center" style="background-image: url('hero-video-snapshot.jpg');">
-    <div class="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-center items-center text-center px-4">
-      <h1 class="text-4xl md:text-6xl font-black text-white uppercase leading-tight">
-        Your Vision, Our Expertise<br />End-to-End Excellence.
-      </h1>
-      <p class="text-orange-500 mt-4 font-semibold uppercase">
-        Discover the Anric Experience – See how we go beyond plant hire
-      </p>
-      <button class="mt-6 bg-orange-500 text-white px-6 py-3 rounded-full font-bold text-lg hover:bg-orange-600">
-        Experience The Difference
-      </button>
+  <section>
+    <h2 style="text-align:center; font-family: 'Playfair Display', serif; font-size: 2rem; margin-bottom: 30px;">Our Services</h2>
+    <div class="services">
+      <div class="service">
+        <h3>Office Cleaning</h3>
+        <p>Professional daily or weekly cleans tailored to your business hours.</p>
+      </div>
+      <div class="service">
+        <h3>Medical Disinfection</h3>
+        <p>High-grade sanitization for clinics and healthcare facilities.</p>
+      </div>
+      <div class="service">
+        <h3>Industrial Sites</h3>
+        <p>Heavy-duty cleaning for warehouses, factories, and workshops.</p>
+      </div>
+      <div class="service">
+        <h3>Emergency Cleanups</h3>
+        <p>Rapid response teams available for urgent situations and spill management.</p>
+      </div>
     </div>
   </section>
 
-  <!-- Sections would follow exactly as seen in the source layout -->
-  <!-- Use tailwind + static images to replicate structure -->
-
-  <!-- Footer -->
-  <footer class="bg-black text-white py-16">
-    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-5 gap-8 px-6">
-      <div class="md:col-span-2">
-        <img src="logo-footer.png" alt="Anric Logo" class="mb-4">
-        <p class="text-sm">Anric Group is a leading provider of rail construction and maintenance services across Australia...</p>
-      </div>
-      <div>
-        <h4 class="font-bold mb-2">Equipment</h4>
-        <ul class="text-sm space-y-1">
-          <li>Road Rail Vehicle Hire</li>
-          <li>Excavator Hire</li>
-          <li>Piling / Drill Hire</li>
-          <li>Dump Truck Hire</li>
-        </ul>
-      </div>
-      <div>
-        <h4 class="font-bold mb-2">Services</h4>
-        <ul class="text-sm space-y-1">
-          <li>Civil Projects</li>
-          <li>Rail Maintenance</li>
-          <li>Engineering</li>
-          <li>Heavy Haulage</li>
-        </ul>
-      </div>
-      <div>
-        <h4 class="font-bold mb-2">Head Office</h4>
-        <ul class="text-sm space-y-1">
-          <li>1277 Mamre Rd, Kemps Creek NSW</li>
-          <li>+61 (02) 9620 1520</li>
-          <li>PO Box 193, Horsley Park, NSW 2175</li>
-        </ul>
-      </div>
+  <section>
+    <div class="testimonial">
+      <h2 style="font-family: 'Playfair Display', serif; font-size: 2rem;">What Clients Say</h2>
+      <p style="margin-top: 20px; font-style: italic;">"Sterile Edge transformed our workspace—flawless attention to detail every time."</p>
     </div>
+  </section>
+
+  <section class="cta-form">
+    <h2 style="font-family: 'Playfair Display', serif; font-size: 2rem;">Request a Free Quote</h2>
+    <form>
+      <input type="text" placeholder="Your Name" required><br>
+      <input type="email" placeholder="Your Email" required><br>
+      <textarea placeholder="Tell us about your space" rows="4" required></textarea><br>
+      <button type="submit">Submit</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Sterile Edge. All rights reserved. | Designed for excellence in cleanliness.</p>
   </footer>
 </body>
 </html>
