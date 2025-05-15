@@ -1,225 +1,135 @@
-/* Import fonts */
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Open+Sans:wght@400;600&display=swap');
+import React from "react";
 
-body {
-  margin: 0;
-  font-family: 'Open Sans', sans-serif;
-  background-color: #061d38;
-  color: #ffffff;
-}
+export default function AnricHomepage() {
+  return (
+    <div className="bg-white font-sans text-gray-900">
+      {/* Hero Section */}
+      <section className="relative h-screen bg-cover bg-center" style={{ backgroundImage: `url('/hero-video-snapshot.jpg')` }}>
+        <div className="absolute inset-0 bg-black bg-opacity-60 flex flex-col justify-center items-center text-center px-4">
+          <h1 className="text-4xl md:text-6xl font-bold text-white uppercase leading-tight">
+            Your Vision, Our Expertise<br />End-to-End Excellence.
+          </h1>
+          <p className="text-orange-500 mt-4 font-semibold">
+            Discover the Anric Experience – See how we go beyond plant hire
+          </p>
+          <button className="mt-6 bg-orange-500 text-white px-6 py-3 rounded-full font-bold text-lg hover:bg-orange-600">
+            Experience The Difference
+          </button>
+        </div>
+      </section>
 
-.container {
-  width: 90%;
-  max-width: 1200px;
-  margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-}
+      {/* Experience Section */}
+      <section className="bg-black text-white py-20 px-6 flex flex-col md:flex-row justify-center items-center">
+        <div className="max-w-2xl">
+          <h2 className="text-4xl font-bold text-orange-500 mb-4">Experience and Knowledge Combined</h2>
+          <p className="text-lg">
+            For over 40 years, Anric Group has been at the forefront of delivering,
+            adapting, and innovating in the civil and rail industries. We achieve
+            superior results by combining international best practices with a
+            reputable, driven, and highly skilled team, ensuring excellence in
+            every project.
+          </p>
+        </div>
+        <img src="/section-image.jpg" alt="Experience Image" className="mt-10 md:mt-0 md:ml-10 w-full md:w-1/2 rounded-lg shadow-lg" />
+      </section>
 
-/* Top Header */
-.top-bar {
-  background: linear-gradient(135deg, #0346ad, #0261c2);
-  background-image: url('https://gcdatacabling.com.au/wp-content/themes/hello-elementor-child/images/pattern-bg.svg');
-  background-size: cover;
-  padding: 20px 0;
-  color: white;
-  border-radius: 0 0 20px 20px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-}
-.logo img {
-  height: 60px;
-}
-.nav-links {
-  display: flex;
-  gap: 25px;
-  font-weight: 600;
-}
-.nav-links a {
-  color: white;
-  text-decoration: none;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  font-size: 14px;
-}
-.top-actions {
-  display: flex;
-  gap: 15px;
-}
-.phone-button,
-.contact-button {
-  border: 2px solid white;
-  padding: 10px 20px;
-  border-radius: 8px;
-  background: transparent;
-  color: white;
-  font-weight: 600;
-  cursor: pointer;
-  font-size: 14px;
-}
-.contact-button {
-  background: white;
-  color: #0346ad;
-}
+      {/* Expertise Section */}
+      <section className="bg-gray-100 py-20 px-6 text-center">
+        <h2 className="text-4xl font-bold mb-8">Our Expertise</h2>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          {[
+            { title: "Rail Construction", img: "/rail.jpg", link: "#" },
+            { title: "Civil Construction", img: "/civil.jpg", link: "#" },
+            { title: "Equipment Hire", img: "/equipment.jpg", link: "#" }
+          ].map((item, idx) => (
+            <div key={idx} className="bg-white rounded-lg shadow-md overflow-hidden">
+              <img src={item.img} alt={item.title} className="w-full h-48 object-cover" />
+              <div className="p-6">
+                <h3 className="text-xl font-bold mb-2 text-orange-600">{item.title}</h3>
+                <a href={item.link} className="inline-block mt-4 text-sm font-semibold text-white bg-gray-900 px-4 py-2 rounded-full">Learn More</a>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
 
-/* Hero Section */
-.hero-section {
-  background: url('https://gcdatacabling.com.au/wp-content/uploads/2022/07/home-cabling-hero.jpg') center/cover no-repeat;
-  padding: 80px 0;
-  position: relative;
-  min-height: 100vh;
-}
-.hero-overlay {
-  background: rgba(6, 29, 56, 0.9);
-  width: 100%;
-  height: 100%;
-  padding: 60px 0;
-}
-.hero-left {
-  flex: 1 1 55%;
-  padding-right: 40px;
-}
-.subtext {
-  color: #00c2ff;
-  font-weight: 600;
-  margin-bottom: 10px;
-  text-transform: uppercase;
-  font-size: 14px;
-}
-.hero-left h1 {
-  font-family: 'Orbitron', sans-serif;
-  font-size: 3rem;
-  font-weight: 700;
-  margin-bottom: 20px;
-  line-height: 1.2;
-  color: #ffffff;
-}
-.hero-left .description {
-  color: #d0d0d0;
-  margin-bottom: 20px;
-  font-size: 1.05rem;
-}
-.benefits {
-  list-style: none;
-  padding-left: 0;
-  margin-bottom: 30px;
-}
-.benefits li {
-  position: relative;
-  padding-left: 30px;
-  margin-bottom: 12px;
-  font-size: 1rem;
-  color: #c0eaff;
-}
-.benefits li::before {
-  content: '\2714';
-  position: absolute;
-  left: 0;
-  color: #00c2ff;
-  font-weight: bold;
-}
-.cta-buttons {
-  display: flex;
-  gap: 20px;
-}
-.btn {
-  text-decoration: none;
-  padding: 14px 28px;
-  border-radius: 8px;
-  font-weight: 700;
-  text-transform: uppercase;
-  font-size: 0.95rem;
-  transition: all 0.3s ease;
-}
-.btn.blue {
-  background: #007bff;
-  color: white;
-  border: none;
-}
-.btn.blue:hover {
-  background: #005dc0;
-}
-.btn {
-  background: transparent;
-  color: #00c2ff;
-  border: 2px solid #00c2ff;
-}
-.btn:hover {
-  background: #00c2ff;
-  color: #01265d;
-}
+      {/* Fleet Section */}
+      <section className="bg-white text-center py-20 px-6">
+        <h2 className="text-4xl font-bold mb-6">Our Fleet</h2>
+        <p className="max-w-3xl mx-auto text-lg mb-8">
+          We operate one of Australia's largest privately owned fleets of specialised civil plant, road rail vehicles (RRVs), and
+          hi-rail construction and maintenance equipment. Our extensive services cover New South Wales, Victoria, Queensland, and
+          South Australia.
+        </p>
+        <a href="#" className="bg-orange-500 text-white px-6 py-3 rounded-full font-semibold text-lg hover:bg-orange-600">
+          View Our Fleet & Equipment
+        </a>
+      </section>
 
-/* Quote Form */
-.hero-right {
-  flex: 1 1 40%;
-  background: rgba(255, 255, 255, 0.1);
-  padding: 30px;
-  border-radius: 20px;
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  box-shadow: 0 0 30px rgba(0,0,0,0.2);
-}
-.quote-form h2 {
-  margin-bottom: 10px;
-  font-size: 1.4rem;
-  color: #ffffff;
-  font-weight: 600;
-}
-.quote-form p {
-  margin-bottom: 20px;
-  color: #dddddd;
-}
-.quote-form form {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-.form-row {
-  display: flex;
-  gap: 12px;
-}
-input,
-textarea {
-  padding: 12px;
-  border-radius: 6px;
-  border: none;
-  width: 100%;
-  font-family: 'Open Sans', sans-serif;
-}
-textarea {
-  resize: vertical;
-  min-height: 80px;
-}
-.submit-button {
-  padding: 14px;
-  background: #007bff;
-  color: white;
-  font-weight: bold;
-  font-size: 1rem;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  margin-top: 10px;
-  text-transform: uppercase;
-}
-.submit-button:hover {
-  background: #0056b3;
-}
+      {/* Projects Section */}
+      <section className="bg-gray-100 text-center py-20 px-6">
+        <h2 className="text-4xl font-bold mb-10">Our Projects</h2>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          {[
+            { title: "Goulburn Yard Crossover Upgrade", img: "/project1.jpg" },
+            { title: "Sydney Metro Northwest", img: "/project2.jpg" },
+            { title: "Sydenham Station Junction", img: "/project3.jpg" },
+          ].map((proj, idx) => (
+            <div key={idx} className="bg-white shadow-md rounded-lg overflow-hidden">
+              <img src={proj.img} alt={proj.title} className="w-full h-48 object-cover" />
+              <div className="p-6">
+                <h3 className="text-xl font-semibold mb-2">{proj.title}</h3>
+                <span className="text-orange-500 font-bold">→</span>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
 
-/* Responsive */
-@media (max-width: 768px) {
-  .container {
-    flex-direction: column;
-    align-items: stretch;
-  }
-  .hero-left, .hero-right {
-    padding: 20px;
-  }
-  .form-row {
-    flex-direction: column;
-  }
-  .cta-buttons {
-    flex-direction: column;
-  }
+      {/* Testimonial Section */}
+      <section className="bg-white py-16 px-6 text-center">
+        <blockquote className="max-w-4xl mx-auto italic text-lg">
+          "Anric Group has been an outstanding partner... The project was completed without disruption... we highly recommend Anric Group."
+        </blockquote>
+        <p className="mt-4 font-bold text-orange-600">Anil Basnet – Project Manager, McMahon Services</p>
+      </section>
+
+      {/* Footer */}
+      <footer className="bg-black text-white py-12 px-6">
+        <div className="grid grid-cols-1 md:grid-cols-5 gap-6 max-w-7xl mx-auto">
+          <div className="col-span-2">
+            <img src="/logo-footer.png" alt="Anric Group Logo" className="mb-4" />
+            <p>
+              Anric Group is a leading provider of rail construction and maintenance services across Australia.
+              With a commitment to excellence and a reputation for delivering high-quality infrastructure projects.
+            </p>
+          </div>
+          <div>
+            <h4 className="font-bold mb-2">Equipment</h4>
+            <ul className="space-y-1">
+              <li>Road Rail Vehicle Hire</li>
+              <li>Excavator Hire</li>
+              <li>Piling / Drill Hire</li>
+              <li>Dump Truck Hire</li>
+            </ul>
+          </div>
+          <div>
+            <h4 className="font-bold mb-2">Services</h4>
+            <ul className="space-y-1">
+              <li>Civil Projects</li>
+              <li>Rail Maintenance</li>
+              <li>Engineering</li>
+              <li>Heavy Haulage</li>
+            </ul>
+          </div>
+          <div>
+            <h4 className="font-bold mb-2">Contact</h4>
+            <p>1277 Mamre Rd, Kemps Creek NSW</p>
+            <p>+61 (02) 9620 1520</p>
+            <p>PO Box 193, Horsley Park, NSW 2175</p>
+          </div>
+        </div>
+      </footer>
+    </div>
+  );
 }
