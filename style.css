@@ -21,9 +21,12 @@ body {
 /* Top Header */
 .top-bar {
   background: linear-gradient(135deg, #0346ad, #0261c2);
+  background-image: url('https://gcdatacabling.com.au/wp-content/themes/hello-elementor-child/images/pattern-bg.svg');
+  background-size: cover;
   padding: 20px 0;
   color: white;
-  border-radius: 0 0 16px 16px;
+  border-radius: 0 0 20px 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
 }
 .logo img {
   height: 60px;
@@ -38,6 +41,7 @@ body {
   text-decoration: none;
   text-transform: uppercase;
   letter-spacing: 1px;
+  font-size: 14px;
 }
 .top-actions {
   display: flex;
@@ -52,6 +56,7 @@ body {
   color: white;
   font-weight: 600;
   cursor: pointer;
+  font-size: 14px;
 }
 .contact-button {
   background: white;
@@ -60,7 +65,7 @@ body {
 
 /* Hero Section */
 .hero-section {
-  background: url('https://images.unsplash.com/photo-1581091215367-59ab6f5f5d3a?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+  background: url('https://gcdatacabling.com.au/wp-content/uploads/2022/07/home-cabling-hero.jpg') center/cover no-repeat;
   padding: 80px 0;
   position: relative;
   min-height: 100vh;
@@ -80,6 +85,7 @@ body {
   font-weight: 600;
   margin-bottom: 10px;
   text-transform: uppercase;
+  font-size: 14px;
 }
 .hero-left h1 {
   font-family: 'Orbitron', sans-serif;
